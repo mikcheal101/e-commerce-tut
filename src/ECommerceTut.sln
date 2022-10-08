@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.810.21
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerceTut", "ECommerceTut.csproj", "{93E9D84B-20B1-4363-9D7D-BA45077EFA6B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{B1DEB147-3A67-46D4-9B82-47032DC27B9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{102D2469-A8FE-43E8-A3C3-93B0BAF6E880}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Api", "Services\Catalog\Catalog.Api\Catalog.Api.csproj", "{99053418-371D-48E4-98B8-AEA51EFEA0A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +15,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{93E9D84B-20B1-4363-9D7D-BA45077EFA6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{93E9D84B-20B1-4363-9D7D-BA45077EFA6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{93E9D84B-20B1-4363-9D7D-BA45077EFA6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{93E9D84B-20B1-4363-9D7D-BA45077EFA6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99053418-371D-48E4-98B8-AEA51EFEA0A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99053418-371D-48E4-98B8-AEA51EFEA0A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99053418-371D-48E4-98B8-AEA51EFEA0A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99053418-371D-48E4-98B8-AEA51EFEA0A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {072A0949-FC73-4179-854B-527F17CA72E7}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{102D2469-A8FE-43E8-A3C3-93B0BAF6E880} = {B1DEB147-3A67-46D4-9B82-47032DC27B9E}
+		{99053418-371D-48E4-98B8-AEA51EFEA0A6} = {102D2469-A8FE-43E8-A3C3-93B0BAF6E880}
 	EndGlobalSection
 EndGlobal
