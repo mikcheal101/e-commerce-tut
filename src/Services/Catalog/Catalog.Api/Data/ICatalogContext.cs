@@ -1,5 +1,4 @@
-﻿using System;
-namespace Catalog.Api.Data
+﻿namespace Catalog.Api.Data
 {
     using MongoDB.Driver;
     using Catalog.Api.Entities;
