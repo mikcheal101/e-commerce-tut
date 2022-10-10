@@ -25,6 +25,13 @@ namespace Basket.Api.Controllers
             return Ok(shoppingCart ?? new ShoppingCart(userName));
         }
 
+        [HttpPost]
+        [ProducesResponseType(typeof(ShoppingCart), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<ShoppingCart>> UpdateShoppingCart([FromBody] ShoppingCart shoppingCart)
+        {
+            var cartUpdated = await this._repository.UpdateBasket(shoppingCart);
+            return Ok(cartUpdated);
+        }
 
     }
 }
