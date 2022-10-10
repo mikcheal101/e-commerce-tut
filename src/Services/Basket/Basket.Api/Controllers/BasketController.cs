@@ -33,5 +33,13 @@ namespace Basket.Api.Controllers
             return Ok(cartUpdated);
         }
 
+        [HttpDelete("{userName}", Name = "DeleteShoppingCart")]
+        [ProducesResponseType(typeof(void), (int)HttpStatusCode.OK)]
+        public async Task<IActionResult> DeleteShoppingCart(string userName)
+        {
+            await this._repository.DeleteBasket(userName);
+            return Ok();
+        }
+
     }
 }
