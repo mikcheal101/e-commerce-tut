@@ -69,7 +69,7 @@ namespace Catalog.Api.Repositories
 
         public async Task<IEnumerable<Product>> GetProductsByName(string name)
         {
-            FilterDefinition<Product> filter = Builders<Product>.Filter.ElemMatch(prod => prod.Name, name);
+            FilterDefinition<Product> filter = Builders<Product>.Filter.Eq(prod => prod.Name, name);
             return await _context
                 .Products
                 .Find<Product>(filter)
@@ -78,7 +78,7 @@ namespace Catalog.Api.Repositories
 
         public async Task<IEnumerable<Product>> GetProductsByCategory(string category)
         {
-            FilterDefinition<Product> filter = Builders<Product>.Filter.ElemMatch(prod => prod.Category, category);
+            FilterDefinition<Product> filter = Builders<Product>.Filter.Eq(prod => prod.Category, category);
             return await _context
                 .Products
                 .Find<Product>(filter)
