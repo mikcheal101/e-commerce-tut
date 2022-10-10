@@ -1,7 +1,7 @@
-using System.Net;
 namespace Basket.Api.Controllers
 {
     using System;
+    using System.Net;
     using Basket.Api.Repositories;
     using Basket.Api.Entities;
     using Microsoft.AspNetCore.Mvc;
