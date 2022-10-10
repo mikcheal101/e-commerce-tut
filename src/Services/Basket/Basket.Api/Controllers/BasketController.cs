@@ -1,0 +1,30 @@
+using System.Net;
+namespace Basket.Api.Controllers
+{
+    using System;
+    using Basket.Api.Repositories;
+    using Basket.Api.Entities;
+    using Microsoft.AspNetCore.Mvc;
+
+    [ApiController]
+    [Route("api/v1/[controller]")]
+    public class BasketController: ControllerBase
+    {
+        private readonly IBasketRepository _repository;
+
+        public BasketController(IBasketRepository repository)
+        {
+            this._repository = repository ?? throw new ArgumentNullException(nameof(repository));
+        }
+
+        [HttpGet("{userName}", Name = "GetShoppingCart")]
+        [ProducesResponseType(typeof(ShoppingCart), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<ShoppingCart>> GetShoppingCart(string userName)
+        {
+            var shoppingCart = await this._repository.GetBasket(userName);
+            return Ok(shoppingCart ?? new ShoppingCart(userName));
+        }
+
+
+    }
+}
