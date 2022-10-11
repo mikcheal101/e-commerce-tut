@@ -10,6 +10,9 @@ services:
   discountdb:
     image: postgres:10.7-alpine
 
+  pgadmin:
+    image: dpage/pgadmin4
+
   catalog.api:
     image: ${DOCKER_REGISTRY-}catalog
     build:
@@ -30,4 +33,5 @@ volumes:
   redis_data:
   portainer_data:
   discount_data:
+  pgadmin_data:
 
