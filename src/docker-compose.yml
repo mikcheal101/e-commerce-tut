@@ -7,6 +7,9 @@ services:
   catalogdb:
     image: mongo
 
+  discountdb:
+    image: postgres:10.7-alpine
+
   catalog.api:
     image: ${DOCKER_REGISTRY-}catalog
     build:
@@ -26,4 +29,5 @@ volumes:
   mongo_data:
   redis_data:
   portainer_data:
+  discount_data:
 
