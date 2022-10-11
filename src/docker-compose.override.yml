@@ -60,7 +60,7 @@ services:
     environment:
       - POSTGRES_USER=postgresdb_user
       - POSTGRES_PASSWORD=postgresdb_password
-      - POSTGRES_DB=postgresdb
+      - POSTGRES_DB=discountdb
 
   pgadmin:
     container_name: pgadmin
