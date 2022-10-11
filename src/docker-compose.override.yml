@@ -41,6 +41,7 @@ services:
       - redis_data:/data
 
   basket.api:
+    container_name: basket.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - "CacheSettings:ConnectionString=basketdb:6379"
