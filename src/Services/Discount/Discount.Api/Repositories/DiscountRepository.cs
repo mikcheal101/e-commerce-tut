@@ -18,12 +18,12 @@ namespace Discount.Api.Repositories
         {
             var coupon = await this.Connection
                 .QueryFirstOrDefaultAsync<Coupon>(
-                    "SELECT * FROM coupon WHERE productName=@productName", 
-                    new { ProductName = productId });
+                    "SELECT * FROM coupon WHERE productId=@productId", 
+                    new { ProductId = productId });
 
             if (coupon == null)
             {
-                return new Coupon {ProductName = "No Discount", Amount = 0, Desription = "No Discount Description"};
+                return new Coupon { ProductId = "", ProductName = "No Discount", Amount = 0, Desription = "No Discount Description" };
             }
 
             return coupon;
@@ -33,7 +33,7 @@ namespace Discount.Api.Repositories
         {
             var affected = await this.Connection
                 .ExecuteAsync(
-                    "INSERT INTO coupon (productName, description, amount) VALUES (@productName, @description, @amount)",
+                    "INSERT INTO coupon (productId, productName, description, amount) VALUES (@productId, @productName, @description, @amount)",
                     new { ProductName = coupon.ProductName, Amount = coupon.Amount, Description = coupon.Desription, ProductId = coupon.ProductId }
                 );
 
