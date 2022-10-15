@@ -6,6 +6,6 @@ namespace Discount.Api.Entities
         public string ProductId { get; set; }
         public string ProductName { get; set; }
         public string Desription { get; set; }
-        public int Amount { get; set; }
+        public double Amount { get; set; }
     }
 }
